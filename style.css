@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  height: 100vh;
+}
+body {
+  font-family: sans-serif;
+  background-image: linear-gradient(
+    to bottom left,
+    rgb(14, 14, 14),
+    rgb(71, 71, 71)
+  );
+}
+.container {
+  width: 60rem;
+  margin: 3.2rem auto 3.2rem;
+}
+.option-heading {
+  cursor: pointer;
+}
+.options {
+  width: 10rem;
+  display: none;
+  position: absolute;
+  list-style: none;
+  z-index: 2;
+  background-color: #0000003b;
+  padding: 0.8rem;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-radius: 0.8rem;
+}
+
+.option {
+  background-color: #202020c9;
+  color: #929191;
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+.option:hover {
+  cursor: pointer;
+  background-color: #00000018;
+}
+
+.flex-els {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 40rem;
+  margin-bottom: 2.4rem;
+  margin-left: 1.8rem;
+}
+
+.flex-els h2,
+.flex-els p {
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #929191;
+}
+
+.game-heading {
+  text-align: center;
+  font-size: 4rem;
+  color: #929191;
+  margin-bottom: 2.4rem;
+}
+
+.playing-box {
+  background-color: #929191;
+  /* border: 10px solid #333; */
+  box-shadow: 0 0 0 10px #464646;
+  border-radius: 0.8rem;
+  height: 60vh;
+  position: relative;
+}
+.before-begin .playing-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(49, 77, 48, 0.6);
+}
+.before-begin .snake-box,
+.before-begin .leading-snake,
+.before-begin .meal-box {
+  display: none;
+}
+.before-begin .start-popup {
+  display: block;
+}
+.leading-snake {
+  border-radius: 20%;
+  display: inline-block;
+  background-color: rgb(179, 53, 53);
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: 6rem;
+  top: 2rem;
+}
+.snake-box {
+  z-index: 1;
+  border-radius: 20%;
+  display: inline-block;
+  background-color: #b33535;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 0 0.9px rgb(73, 73, 73);
+  /* left: 617.828125rem; */
+}
+
+.snake-box[data-sn="0"] {
+  top: 2rem;
+  left: 4rem;
+}
+.snake-box[data-sn="1"] {
+  top: 2rem;
+  left: 2rem;
+}
+.snake-box[data-sn="2"] {
+  top: 2rem;
+  left: 0;
+}
+
+.meal-box {
+  display: inline-block;
+  background-color: #34642a;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 30%;
+  position: absolute;
+}
+.btn {
+  border: none;
+  font-size: 1.8rem;
+  border-radius: 0.5rem;
+  background-color: #159415;
+  padding: 0.8rem 2.4rem;
+  color: #baf3ac;
+}
+
+.main {
+  position: relative;
+}
+.start-popup {
+  z-index: 2;
+  background-color: #d4f5d4;
+  box-shadow: 0 1.2rem 2.4rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1.6rem;
+  padding: 3.2rem 3.2rem;
+  display: none;
+  position: absolute;
+  width: 32rem;
+  height: 15rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.start-popup p {
+  margin-bottom: 1.8rem;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #0f460fb6;
+}
+.start-popup span {
+  font-size: 2rem;
+  color: #0f460f;
+}
+
+.btns {
+  /* width: 30rem; */
+  display: flex;
+  gap: 2.4rem;
+  justify-content: center;
+}
+.fail-popup {
+  display: none;
+}
+.restart .fail-popup {
+  display: block;
+}
+.restart .playing-box {
+  background-color: #bb54549c;
+}
+
+.btn-restart {
+  border: none;
+  z-index: 2;
+  background-color: #b33535;
+  position: absolute;
+  font-size: 2.4rem;
+  top: 50%;
+  left: 50%;
+  padding: 1.2rem 3.2rem;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.3);
+  color: #f5d4d4;
+}
+
+.btn:hover {
+  /* border: 1px solid #333; */
+  /* box-shadow: 0 0 0 1px #333; */
+  background-color: #478f47;
+}
+.btn-restart:hover {
+  background-color: #922929;
+}
+.btn-left {
+  font-size: 1.8rem;
+  border-radius: 0.4rem;
+  background-color: #6abe6a;
+  padding: 0.8rem 1.2rem;
+  color: #e1fdd6;
+}
+.score {
+  width: 30rem;
+}
+.hscore,
+.scoreE {
+  z-index: 2;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #d4d3d3;
+  text-shadow: 0 1.2rem 2.4rem 0 rgba(49, 77, 48, 0.6);
+}
+.scoreE {
+  top: 24%;
+  /* left: 46.5%; */
+}

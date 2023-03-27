@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>snake-game</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="game-heading">Web-Snake</h1>
+        <div class="flex-els">
+          <div class="option-box">
+            <h2 class="option-heading">Option &blacktriangledown;</h2>
+            <ul class="options">
+              <li><button class="option option--easy">easy</button></li>
+              <li><button class="option option--medium">medium</button></li>
+              <li><button class="option option--hard">hard</button></li>
+            </ul>
+          </div>
+          <p class="score-p">score: <span class="score">0</span></p>
+        </div>
+      </header>
+      <main class="main before-begin">
+        <div class="playing-box">
+          <div class="leading-snake">&nbsp;</div>
+          <div class="snake-container">
+            <div data-sn="0" class="snake-box">&nbsp;</div>
+            <div data-sn="1" class="snake-box">&nbsp;</div>
+            <div data-sn="2" class="snake-box">&nbsp;</div>
+          </div>
+          <div class="meal-box">&nbsp;</div>
+        </div>
+        <div class="start-popup">
+          <p>
+            Welcome to Web-Snake<br />
+            <span>You will enjoy the game.</span>
+          </p>
+          <div class="btns">
+            <button class="btn btn-start">Start</button>
+            <button class="btn btn-left">Learn more</button>
+          </div>
+        </div>
+        <div class="fail-popup">
+          <button class="btn btn-restart">Restart</button>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
